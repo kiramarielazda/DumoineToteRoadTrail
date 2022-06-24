@@ -28,12 +28,14 @@
     /*opacity: 0.5;*/
   }
   #about {
-    background-color: #989e6af1;
+    background:rgb(106, 133, 91);
   }
   .w3-bar .w3-button {
     padding: 16px;
   }
- 
+  .w3-bar .w3-button:hover {
+    background-color:rgb(106, 133, 91, 0.5) !important;
+  }
   /* Style all font awesome icons */
 .fa {
   padding: 20px;
@@ -44,7 +46,6 @@
   margin-left: auto;
     margin-right: auto;
 }
-
 /* Add a hover effect if you want */
 .fa:hover {
   opacity: 0.7;
@@ -60,8 +61,8 @@
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
         <a href="index.html#about" class="w3-bar-item w3-button">ABOUT</a>
-        <a href="trials.html" class="w3-bar-item w3-button"><i class="fa-solid fa-list"></i> METHODOLOGY</a>
-        <a href="solution.html" class="w3-bar-item w3-button"><i class="fa-solid fa-map"></i> SOLUTION</a>
+        <a href="solution.html" class="w3-bar-item w3-button"><!--<i class="fa-solid fa-map">--></i> SOLUTION</a>
+        <a href="trials.html" class="w3-bar-item w3-button"><!--<i class="fa-solid fa-list"></i>--> METHODOLOGY</a>
         <a href="index.html#team" class="w3-bar-item w3-button"><i class="fa-solid fa-people-group"></i> TEAM</a>
       </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -74,23 +75,23 @@
   <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
     <a href="index.html#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="trials.html" onclick="w3_close()" class="w3-bar-item w3-button">METHODOLOGY</a>
     <a href="solution.html" onclick="w3_close()" class="w3-bar-item w3-button">SOLUTION</a>
+    <a href="trials.html" onclick="w3_close()" class="w3-bar-item w3-button">METHODOLOGY</a>
     <a href="index.html#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
   </nav>
   <!-- Header with full-height image -->
   <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-      <div class="w3-display-left w3-text-white" style="padding:48px; background-color: rgba(20, 39, 12, 0.514);">
+      <div class="w3-display-left w3-text-white" style="padding:48px; background-color: rgba(41, 56, 33, 0.75);">
         <span class="w3-jumbo w3-hide-small" style="font-weight: 700;">Rediscovering the Historic Dumoine Tote Road Trail:</span><br>
         <span class="w3-jumbo w3-hide-small">Hiking among Remnants of the Past.</span><br>
         <span class="w3-large"><strong>Creating mapping and web products for a new hiking trail in Quebec that highlights the unique history of the area.</strong></span><br>
-        <span class="w3-large">A project in colloration with the Friends of the Dumoine River</span><br>
+        <span class="w3-large">A project completed in colloration with the Friends of the Dumoine River</span><br>
 
         <p><a href="index.html#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
       </div>
   </header>
   <!-- About Section -->
-  <div class="w3-container" style="padding:128px 80px" id="about">
+  <div class="w3-container" style="padding:128px 80px;" id="about">
     <h3 class="w3-center" style="font-weight: bold;">ABOUT THE PROJECT</h3>
     <p class="w3-center w3-large">The <i>Friends of the Dumoine River</i> is a non-profit organization based in the Ottawa River Valley who have asked our 
       team to provide GIS services for their new project, the Dumoine Tote Road Trail. They would like to attract individuals and groups to the trail 
@@ -197,7 +198,7 @@
               trail and use the team's creation some day soon!</p>
               <div class="social">
               <a href="https://www.linkedin.com/in/kira-marie-lazda/" class="fa fa-linkedin-square" style="font-size:48px;background: #007bb5;
-              color: white;"></a>
+              color: white; margin-bottom: 0.25em;"></a>
               </div>
           </div>
         </div>
@@ -206,8 +207,8 @@
   </div>
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64">
-    <a href="#home" class="w3-button w3-khaki"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-    <p>Created for Fleming College GIS | April 2022</p>
+    <a href="#home" class="w3-button" style="background:rgb(106, 133, 91)"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <p>Created for Fleming College GIS | June 2022</p>
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   </footer>
   <script>
