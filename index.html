@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
   <style>
   body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
@@ -44,11 +45,62 @@
   text-decoration: none;
   border-radius: 50%;
   margin-left: auto;
-    margin-right: auto;
+  margin-right: auto;
 }
 /* Add a hover effect if you want */
 .fa:hover {
   opacity: 0.7;
+}
+#more {
+  display: none;
+}
+#morebtn {
+  background-color: rgba(105, 132, 172, 0.842);
+  border: none;
+  color:black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+}
+#more2 {
+  display: none;
+}
+#morebtn2 {
+  background-color: rgba(105, 132, 172, 0.842);
+  border: none;
+  color:black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+}
+#more3 {
+  display: none;
+}
+#morebtn3 {
+  background-color: rgba(105, 132, 172, 0.842);
+  border: none;
+  color:black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
 }
 
   </style>
@@ -160,11 +212,12 @@
             <p>Allison is a GIS Cartographic Specialist student and a prior graduate of Fleming College's Ecosystem Management program.</p> 
               <p>Allison took on the role of Cartographic Lead for this project; she has a strong sense of expertise in the comprehension of 
               cartographic principles, thanks to her former background in graphic design and her current background in studying the art 
-              of GIS and cartography. Specifically, throughout the project her duties will include oversight and implementation of cartographic elements, such as typography, 
+              of GIS and cartography<span id="dots">...</span><span id="more">Specifically, throughout the project her duties will include oversight and implementation of cartographic elements, such as typography, 
               symbology, color, and design. Her responsibilities also included data analysis, processing, and generalization techniques to create more relevant cartographic 
               representations. Her knowledge of GIS and design, as well as her passion for the environment, will aid in the development of static maps, web maps, 
-              and website design.</p> <p>She was excited about the opportunity to bring her passion for ecology and technology together to make this project a reality. 
-              Living near the Dumoine River, she hopes to learn more about the local environment and become more involved by hiking the Dumoine River trail!</p>
+              and website design. She was excited about the opportunity to bring her passion for ecology and technology together to make this project a reality. 
+              Living near the Dumoine River, she hopes to learn more about the local environment and become more involved by hiking the Dumoine River trail!</span></p>
+            <button onclick="readmoreFunction()" id="morebtn">Read more</button>          
           </div>
         </div>
       </div>
@@ -176,10 +229,11 @@
             <p class="w3-opacity">GIS Cartographic Specialist</p>
             <p>Carol is currently a GIS cartographic specialist student at Fleming College. She also holds an undergraduate degree in Classical Studies focusing on Archaeology from Brock University. </p>
               <p>With a background in cartography and a unique interest in applying GIS to historic projects, Carol will be applying her knowledge of design and visual hierarchy 
-              to the web-based products of the project. Her previous experience with historic engagement will be of considerable benefit in creating products designed to inform 
+              to the web-based products of the project<span id="dots2">...</span><span id="more2"> Her previous experience with historic engagement will be of considerable benefit in creating products designed to inform 
               the public about the importance and interpretation of the Dumoine Tote Road Trail. Her project commitments included data collection formatting, web development and 
-              maintenance, as well as coordination with the project advisor. </p><p>She is passionate about history and archaeological preservation, and this project provided a 
-              unique experience to explore the outdoors while learning about the Dumoine River trail! </p>
+              maintenance, as well as coordination with the project advisor. She is passionate about history and archaeological preservation, and this project provided a 
+              unique experience to explore the outdoors while learning about the Dumoine River trail!</span></p>
+              <button onclick="readmoreFunction2()" id="morebtn2">Read more</button>          
           </div>
         </div>
       </div>
@@ -188,18 +242,16 @@
           <img src="images/kira.jpg" alt="Kira" style="width:100%">
           <div class="w3-container">
             <h3>Kira-Marie Lazda</h3>
-            <p class="w3-opacity">GIS Applications Specialist</p>
+            <div class="badge-base LI-profile-badge" style="float:right; margin-left:10px;"data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="kira-marie-lazda" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ca.linkedin.com/in/kira-marie-lazda?trk=profile-badge"></a></div>
+            <!-- <p class="w3-opacity">GIS Applications Specialist</p> -->
             <p>Kira-Marie is currently a GIS applications specialist student at Fleming College. She has an undegraduate degree in Environmental Science from
-              McGill University, with a specialty in Conservation & Biodiversity.</p> <p>As the applications specialist on the team, Kira-Marie brought her experience with programming and 
-              database management to the development of this project’s more technical aspects, specifically the geodatabase design and creation of the interactive web map. 
+              McGill University, with a specialty in Conservation & Biodiversity. As the applications specialist on the team, Kira-Marie brought her experience with programming and 
+              database management to the development of this project’s more technical aspects, specifically the geodatabase design and creation of the interactive web map.<span id="dots3">...</span><span id="more3">
               Further, she pulled from previous leadership opportunities to act as the team manager to ensure that all team members were contributing equally and were feeling 
-              inspired about their responsibilities. Her role also consisted of acting as the client liaison and ensuring that proposed deliverables and timelines were being met.</p><p>  
+              inspired about their responsibilities. Her role also consisted of acting as the client liaison and ensuring that proposed deliverables and timelines were being met. 
               This project is the perfect fit for her because she is an outdoor enthusiast and avid hiker; she is eager to hike the Dumoine River
-              trail and use the team's creation some day soon!</p>
-              <div class="social">
-              <a href="https://www.linkedin.com/in/kira-marie-lazda/" class="fa fa-linkedin-square" style="font-size:48px;background: #007bb5;
-              color: white; margin-bottom: 0.25em;"></a>
-              </div>
+              trail and use the team's creation some day soon!</span></p>
+              <button onclick="readmoreFunction3()" id="morebtn3">Read more</button>                    
           </div>
         </div>
       </div>
@@ -226,6 +278,48 @@
   function w3_close() {
       mySidebar.style.display = "none";
   }
+  function readmoreFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("morebtn");
+ if (dots.style.display === "none"){
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+function readmoreFunction2() {
+  var dots = document.getElementById("dots2");
+  var moreText = document.getElementById("more2");
+  var btnText = document.getElementById("morebtn2");
+ if (dots.style.display === "none"){
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+function readmoreFunction3() {
+  var dots = document.getElementById("dots3");
+  var moreText = document.getElementById("more3");
+  var btnText = document.getElementById("morebtn3");
+ if (dots.style.display === "none"){
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
   </script>
 </body>
 </html>
