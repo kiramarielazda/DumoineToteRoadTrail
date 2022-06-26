@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mapping the Dumoine River Trail</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Allison Talsma, Carol Buckingham, Kira-Marie Lazda">
+  <meta name="description" content="GEOM99 Final Project website homepage">
+  <meta name="keywords" content="Web Development, GIS, Open-source, Mapping">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+  body, html {
+    height: 100%;
+    line-height: 1.8;
+    font-size: 17px;
+  }
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("images/path1.jpg");
+    min-height: 100%;
+    /*opacity: 0.5;*/
+  }
+  #about {
+    background:rgb(106, 133, 91);
+  }
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+  .w3-bar .w3-button:hover {
+    background-color:rgb(106, 133, 91, 0.5) !important;
+  }
+  /* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+#more {
+  display: none;
+}
+#morebtn {
+  background-color: rgba(105, 132, 172, 0.842);
+  border: none;
+  color:black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+}
+#more2 {
+  display: none;
+}
+#morebtn2 {
+  background-color: rgba(105, 132, 172, 0.842);
+  border: none;
+  color:black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+}
+#more3 {
+  display: none;
+}
+#morebtn3 {
+  background-color: rgba(105, 132, 172, 0.842);
+  border: none;
+  color:black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="index.html#home" class="w3-bar-item w3-button w3-wide">FLEMING GIS</a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="index.html#about" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="index.html#solution" class="w3-bar-item w3-button"><!--<i class="fa-solid fa-map">--></i> PRODUCTS</a>
+        <a href="index.html#methods" class="w3-bar-item w3-button"><!--<i class="fa-solid fa-list"></i>--> METHODOLOGY</a>
+        <a href="index.html#team" class="w3-bar-item w3-button"><i class="fa-solid fa-people-group"></i> TEAM</a>
+      </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="index.html#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="index.html#solution" onclick="w3_close()" class="w3-bar-item w3-button">PRODUCTS</a>
+    <a href="index.html#solution" onclick="w3_close()" class="w3-bar-item w3-button">METHODOLOGY</a>
+    <a href="index.html#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  </nav>
+  <!-- Header with full-height image -->
+  <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+      <div class="w3-display-left w3-text-white" style="padding:48px; background-color: rgba(34, 41, 30, 0.829);">
+        <span class="w3-jumbo w3-hide-small" style="font-weight: 700; line-height: 1;">Rediscovering the Historic Dumoine Tote Road Trail:</span><br>
+        <span class="w3-xxlarge w3-hide-large w3-hide-medium" style="font-weight: 700;">Rediscovering the Historic Dumoine Tote Road Trail:</span><br>
+        <span class="w3-jumbo w3-hide-small" style="font-style: oblique; font-size: smaller; line-height: 1.5;">Hiking among Remnants of the Past</span><br>
+        <span class="w3-xxlarge w3-hide-large w3-hide-medium" style="font-style: oblique; font-size: smaller;">Hiking among Remnants of the Past</span><br>
+        <span class="w3-xlarge">Creating mapping and web products for a new backcountry hiking trail in Quebec that highlights the unique history of the area.</span><br>
+        <span class="w3-large" style="font-style: oblique;">A project completed in colloration with the Friends of the Dumoine River</span><br>
+
+        <p><a href="index.html#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
+      </div>
+  </header>
+  <!-- About Section -->
+  <div class="w3-container" style="padding:128px 80px;" id="about">
+    <h3 class="w3-center" style="font-weight: bold;">ABOUT THE PROJECT</h3>
+    <p class="w3-center w3-large">The <i>Friends of the Dumoine River</i> is a non-profit organization based in the Ottawa River Valley who have asked our 
+      team to provide GIS services for their new project, the Dumoine Tote Road Trail. They would like to attract individuals and groups to the trail 
+      who are passionate about wilderness exploration and preservation. The Friends are working alongside several partners to increase community engagement 
+      and are very close to publicizing their work; as such they need specific mapping materials to help get their vision for this new backcountry experience off the ground. 
+      We have produced a printable PDF trail map, an interactive web map, and a custom website to inform and engage the public about the Dumoine Tote Road Trail. </p>
+    <!-- <div class="w3-row-padding w3-center" style="margin-top:64px">
+      <div class="w3-quarter">
+        <i class="fa-solid fa-lightbulb w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large" style="font-weight: bold;">Ideal</p>
+        <p>Users can interact with the web map to view the full trail, get information about campsites, historical landmarks, 
+          and interesting natural and man-made features as pop-ups on the map. Users will also have the ability to filter
+        which layers they would like to see on the map and search for features of interest to them.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa-solid fa-hand-point-up w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large" style="font-weight: bold;">Reality</p>
+        <p>Only general reference maps currently exist for the area and additional trail data may need to be collected 
+          and transferred into a useable format. There is no tool currently available to collect POI data but can be created using open source solutions. 
+          Typically a web map for hiking trails will not have info pop-ups and layer functionality integrated into it.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa-solid fa-circle-exclamation w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large" style="font-weight: bold;">Consequences</p>
+        <p>Having to switch from looking at a trail map to reading about campsites, interesting view points or historical facts on a separate page 
+          or even separate website is disjointed and cumbersome for the user, and the overall process is less convenient for someone looking 
+          to plan their overnight or day hikes. </p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large" style="font-weight: bold;">Proposal</p>
+        <p>We aim to create a web map to showcase collected data, inform the public about the trail, and provide hiking and camping details. 
+          A form to collect data about points of interest and maintenance requests along the trail is a secondary goal.
+          The main focus is to keep any solutions open-source.</p>
+      </div>
+    </div> -->
+  </div>
+  <!-- Intro to Trials Section -->
+  <div class="w3-container w3-light-grey" style="padding:128px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>How we achieved our goals</h3>
+      <p>To ensure we provide our client with the best product we can offer, we made sure to test out many possible solutions. 
+        Web maps were designed using OpenStreetMap, QGIS, Mapbox and Leaflet, each with their own benefits and shortcomings. Trail data was also displayed
+        as GeoJSON, KML and integrated Mapbox data tiles to determine which option would be the most efficient and easy to maintain. For the data collection form, 
+        Survey123 and KoBoToolbox functionalities were compared. Check out our assessment of every option we tried below!
+      </p>
+      <p><a href="trials.html" class="w3-button w3-black"><i class="fa fa-th"></i> View Our Trials</a></p>
+    </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="images/web.jpg" alt="spider web with dragonfly" width="700" height="394">
+    </div>
+  </div>
+  </div>
+  <!--Team Section-->
+  <div class="w3-container" style="padding:128px 16px" id="team">
+    <h3 class="w3-center">THE TEAM</h3>
+    <p class="w3-center w3-large">The GIS specialists hard at work</p>
+    <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="images/allison.jpg" alt="AllisonTalsma" style="width:100%">
+          <div class="w3-container">
+            <h3>Allison Talsma</h3>
+            <p class="w3-opacity">GIS Cartographic Specialist</p>
+            <p>Allison is a GIS Cartographic Specialist student and a prior graduate of Fleming College's Ecosystem Management program.</p> 
+              <p>Allison took on the role of Cartographic Lead for this project; she has a strong sense of expertise in the comprehension of 
+              cartographic principles, thanks to her former background in graphic design and her current background in studying the art 
+              of GIS and cartography<span id="dots">...</span><span id="more">Specifically, throughout the project her duties will include oversight and implementation of cartographic elements, such as typography, 
+              symbology, color, and design. Her responsibilities also included data analysis, processing, and generalization techniques to create more relevant cartographic 
+              representations. Her knowledge of GIS and design, as well as her passion for the environment, will aid in the development of static maps, web maps, 
+              and website design. She was excited about the opportunity to bring her passion for ecology and technology together to make this project a reality. 
+              Living near the Dumoine River, she hopes to learn more about the local environment and become more involved by hiking the Dumoine River trail!</span></p>
+            <button onclick="readmoreFunction()" id="morebtn">Read more</button>          
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="images/carol.jpg" alt="Carol" style="width:100%">
+          <div class="w3-container">
+            <h3>Carol Buckingham</h3>
+            <p class="w3-opacity">GIS Cartographic Specialist</p>
+            <p>Carol is currently a GIS cartographic specialist student at Fleming College. She also holds an undergraduate degree in Classical Studies focusing on Archaeology from Brock University. </p>
+              <p>With a background in cartography and a unique interest in applying GIS to historic projects, Carol will be applying her knowledge of design and visual hierarchy 
+              to the web-based products of the project<span id="dots2">...</span><span id="more2"> Her previous experience with historic engagement will be of considerable benefit in creating products designed to inform 
+              the public about the importance and interpretation of the Dumoine Tote Road Trail. Her project commitments included data collection formatting, web development and 
+              maintenance, as well as coordination with the project advisor. She is passionate about history and archaeological preservation, and this project provided a 
+              unique experience to explore the outdoors while learning about the Dumoine River trail!</span></p>
+              <button onclick="readmoreFunction2()" id="morebtn2">Read more</button>          
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="images/kira.jpg" alt="Kira" style="width:100%">
+          <div class="w3-container">
+            <h3>Kira-Marie Lazda</h3>
+            <!-- <div class="badge-base LI-profile-badge" style="float:right; margin-left:10px;"data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="kira-marie-lazda" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ca.linkedin.com/in/kira-marie-lazda?trk=profile-badge"></a></div> -->
+            <p class="w3-opacity">GIS Applications Specialist</p>
+            <p>Kira-Marie is currently a GIS applications specialist student at Fleming College. She has an undegraduate degree in Environmental Science from
+              McGill University, with a specialty in Conservation & Biodiversity. As the applications specialist on the team, Kira-Marie brought her experience with programming and 
+              database management to the development of this project’s more technical aspects, specifically the geodatabase design and creation of the interactive web map.<span id="dots3">...</span><span id="more3">
+              Further, she pulled from previous leadership opportunities to act as the team manager to ensure that all team members were contributing equally and were feeling 
+              inspired about their responsibilities. Her role also consisted of acting as the client liaison and ensuring that proposed deliverables and timelines were being met. 
+              This project is the perfect fit for her because she is an outdoor enthusiast and avid hiker; she is eager to hike the Dumoine River
+              trail and use the team's creation some day soon!</span></p>
+              <button onclick="readmoreFunction3()" id="morebtn3">Read more</button>                    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64">
+    <a href="#home" class="w3-button" style="background:rgb(106, 133, 91)"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <p>Created for Fleming College GIS | June 2022</p>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  </footer>
+  <script>
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  var mySidebar = document.getElementById("mySidebar");
+
+  function w3_open() {
+      if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+      } else {
+      mySidebar.style.display = 'block';
+      }
+  }
+  // Close the sidebar with the close button
+  function w3_close() {
+      mySidebar.style.display = "none";
+  }
+  function readmoreFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("morebtn");
+ if (dots.style.display === "none"){
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+function readmoreFunction2() {
+  var dots = document.getElementById("dots2");
+  var moreText = document.getElementById("more2");
+  var btnText = document.getElementById("morebtn2");
+ if (dots.style.display === "none"){
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+function readmoreFunction3() {
+  var dots = document.getElementById("dots3");
+  var moreText = document.getElementById("more3");
+  var btnText = document.getElementById("morebtn3");
+ if (dots.style.display === "none"){
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+  </script>
+  <!-- <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script> -->
+
+</body>
+</html>
